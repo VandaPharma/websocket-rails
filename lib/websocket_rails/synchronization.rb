@@ -152,8 +152,7 @@ module WebsocketRails
 
         id = connection.user_identifier
         user = connection.user
-        binding.pry
-        redis.hset 'websocket_rails.users', id, {id.to_sym => id}.to_json
+        redis.hset 'websocket_rails.users', id, { :id => id}.to_json
       end.resume
     end
 
